@@ -30,3 +30,7 @@ const person: {
     },
 
 }
+
+
+//Default Parameters
+
