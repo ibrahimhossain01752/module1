@@ -1,4 +1,4 @@
-class Student {
+class Parent  {
     name: string;
     age: number;
     address: string;
@@ -14,16 +14,27 @@ class Student {
     }
 }
 
-class Teacher {
-    name: string;
-    age: number;
-    address: string;
-    designation: string;
 
-    constructor(name: string, age: number, address: string, designation: string) {
-        this.name = name;
-        this.age = age;
-        this.address = address;
-        this.designation = designation;
-    }
+
+class Student extends Parent {
+   constructor(name: string, age: number,address: string){
+    super(name, age, address);
+   }
 }
+
+const student1 = new Student('Mr X',14,'uganda');
+
+class Teacher extends Parent{
+    designation: string;
+   constructor(name: string, age: number, address: string, designation: string){
+    super(name, age, address)
+    this.designation = designation;
+   }
+    
+    takeClasses(numOfClass:number):string {
+    return `This ${this.name} will take ${numOfClass} classes`
+}
+}
+
+const teacher1 = new Teacher('Mr.Y',23,'Bangladesh','Professor')
+
